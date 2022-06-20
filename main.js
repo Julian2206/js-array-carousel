@@ -22,6 +22,7 @@ slide.src = myImageList[index];
 
 // straight
 nextBtn.addEventListener("click", function () {
+  // add one
   index++;
 
   if (index > myImageList.length - 1) {
@@ -32,6 +33,7 @@ nextBtn.addEventListener("click", function () {
 
 // reverse
 previousBtn.addEventListener("click", function () {
+  // minus 1
   index--;
 
   if (index < 0) {
