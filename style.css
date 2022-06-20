@@ -1,0 +1,12 @@
+.carousel-wrapper .carousel-image img {
+  /* display: none; */
+  width: 100%;
+}
+
+.carousel-image {
+  height: 100vh;
+}
+
+.carousel-wrapper .carousel-image img.active {
+  display: block;
+}
