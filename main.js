@@ -1,3 +1,4 @@
+// array images list
 const myImageList = [
   "https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg",
   "https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6.jpg",
@@ -7,27 +8,34 @@ const myImageList = [
   "https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg",
 ];
 
+// get the empty img by Id "";
 let slide = document.getElementById("slide");
 
+// get button element Id and assign to a const;
 const previousBtn = document.getElementById("previous-button");
 const nextBtn = document.getElementById("next-button");
 
+// set current index to 0;
 let index = 0;
 
 slide.src = myImageList[index];
 
-/* let activeElement = 0;
+// straight
+nextBtn.addEventListener("click", function () {
+  index++;
 
-//const newImage = document.createElement("img");
-const newImage = document.createElement("img");
-newImage.src =
-  "https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg";
-document.body.appendChild(newImage);
+  if (index > myImageList.length - 1) {
+    index = 0;
+  }
+  slide.src = myImageList[index];
+});
 
-//newImage.src = [myImageList];
+// reverse
+previousBtn.addEventListener("click", function () {
+  index--;
 
-const imageWrapper = document.querySelector(
-  ".carousel-wrapper .carousel-image-container"
-); */
-
-//console.log(imageWrapper.children);
+  if (index < 0) {
+    index = myImageList.length - 1;
+  }
+  slide.src = myImageList[index];
+});
