@@ -1,4 +1,3 @@
-// array images list
 const myImageList = [
   "https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg",
   "https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6.jpg",
@@ -18,30 +17,27 @@ const nextBtn = document.getElementById("next-button");
 // set current index to 0;
 let index = 0;
 
+// remove slide["src"]
 slide["src"] = myImageList[index];
 
-//test
-/* myImageList[index].classList.add("active");
-myImageList[index].classList.remove("active"); */
+for (let index = 0; index <= myImageList.length; index++) {
+  /* let index = 1; */
+  nextBtn.addEventListener("click", function () {
+    // add one
+    index++;
 
-// straight
-nextBtn.addEventListener("click", function () {
-  // add one
-  index++;
+    if (index > myImageList.length - 1) {
+      index = 0;
+    }
+    slide.src = myImageList[index];
+  });
+  previousBtn.addEventListener("click", function () {
+    // minus 1
+    index--;
 
-  if (index > myImageList.length - 1) {
-    index = 0;
-  }
-  slide.src = myImageList[index];
-});
-
-// reverse
-previousBtn.addEventListener("click", function () {
-  // minus 1
-  index--;
-
-  if (index < 0) {
-    index = myImageList.length - 1;
-  }
-  slide.src = myImageList[index];
-});
+    if (index < 0) {
+      index = myImageList.length - 1;
+    }
+    slide.src = myImageList[index];
+  });
+}
